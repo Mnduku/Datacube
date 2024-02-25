@@ -323,7 +323,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
     width: 100%;
     top: 90%;
   }
-  
+  .piece{
+    transform-style: preserve-3d;
+  }
   *.unselectable {
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -340,7 +342,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
 
   .text:hover{
     color: white;
-    text-shadow: 1px 1px 30px rgb(94, 92, 92);
+    text-shadow: 1px 1px 30px rgb(24, 23, 23);
   }
   
   .centered, .cube > .piece > .element > .sticker {
@@ -350,6 +352,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
     left: 0;
     right: 0;
     margin: auto;
+    transform-style: preserve-3d;
   }
   
   .sticker{
@@ -369,7 +372,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
   .scene > .pivot {
     width: 0;
     height: 0;
-    transition: 0.18s;
+    transition: 0.1s;
   }
   .scene .anchor {
     width: 2em;
@@ -398,22 +401,28 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
     border-radius: 10%;
   }
   .cube > .piece > .element.left {
+    transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(-90deg) rotateZ(180deg) translateZ(1em);
   }
   .cube > .piece > .element.right {
+    transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg) translateZ(1em);
   }
   .cube > .piece > .element.back {
+    transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(180deg) rotateZ(-90deg) translateZ(1em);
   }
   .cube > .piece > .element.front {
+    transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
   }
   .cube > .piece > .element.bottom {
+    transform-style: preserve-3d;
     transform: rotateX(-90deg) rotateY(0deg) rotateZ(-90deg) translateZ(1em);
   }
   .cube > .piece > .element.top {
     transform: rotateX(90deg) rotateY(0deg) rotateZ(180deg) translateZ(1em);
+    transform-style: preserve-3d;
   }
   .cube > .piece > .element > .sticker {
     transform: translateZ(2px);
@@ -424,27 +433,40 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
     box-shadow: inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25), inset -0.05em -0.05em 0.2rem 0 rgba(0, 0, 0, 0.25);
   }
   .cube > .piece > .element > .sticker.blue {
-    background-color: #001ca8;
+    background-color: #383737;
   }
   .cube > .piece > .element > .sticker.green {
-    background-color: #006E16;
+    background-color: #502b4b;
   }
   .cube > .piece > .element > .sticker.white {
-    background-color: #DDD;
+    background-color: #ddd8d8;
   }
   .cube > .piece > .element > .sticker.yellow {
-    background-color: #E0AE00;
+    background-color: #2a4652;
   }
   .cube > .piece > .element > .sticker.orange {
-    background-color: #FF5000;
+    background-color: #2e4826;
   }
   .cube > .piece > .element > .sticker.red {
-    background-color: #DF0500;
+    background-color: #542221;
   }
-  .boxinfo{
-    position: absolute;
-    position: inherit;
-    transform-style: inherit;
+  .cube > .piece > .element > .sticker.blue:hover {
+    background-color: #1d1d1d;
+  }
+  .cube > .piece > .element > .sticker.green:hover {
+    background-color: #1d1d1d;
+  }
+  .cube > .piece > .element > .sticker.white:hover {
+    background-color: #1d1d1d;
+  }
+  .cube > .piece > .element > .sticker.yellow:hover {
+    background-color: #1d1d1d;
+  }
+  .cube > .piece > .element > .sticker.orange:hover {
+    background-color: #1d1d1d;
+  }
+  .cube > .piece > .element > .sticker.red:hover {
+    background-color: #1d1d1d;
   }
   .orange > .boxinfo{
     transform: rotate(90deg);
@@ -457,6 +479,61 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
   }
   .yellow > .boxinfo{
     transform: rotate(270deg);
+  }
+  
+  .infodisplay{
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    font-size: 1.8em;
+    align-content: center;
+    width: 13rem;
+    text-shadow: 1px 1px 30px rgb(94, 92, 92);
+    height: 50rem;
+    position: fixed;
+    left: 1%;
+    color: white;
+  }
+  .visible{
+    display: flex;
+  }
+  .addpoint{
+    all: unset;
+    display: flex;
+    align-self: center;
+    color: #fffafa;
+    height: 3rem;
+    width: 3rem;
+    font-size: 30px;
+    background: none;
+  }
+  .addpoint:hover{
+    text-shadow: 1px 1px 30px rgb(94, 92, 92);
+    transform: scale(130%);
+    transition-duration: 0.2s;
+  }
+
+  .buttondisplay{
+    position: fixed;
+    right:0%;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    width: 10rem;
+    background-color: #1d1d1d;
+  
+
+  }
+  .goback, .settings, .editmodet{
+    all: unset;
+    display: flex;
+    align-self: center;
+    color: #fffafa;
+    height: 3rem;
+    width: 3rem;
+    font-size: 30px;
+    background: none;
   }`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -562,6 +639,202 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
+/***/ }),
+/* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Cube)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+var Cube = /*#__PURE__*/function () {
+  function Cube(x) {
+    _classCallCheck(this, Cube);
+    _defineProperty(this, "count", 54);
+    _defineProperty(this, "faces", []);
+    _defineProperty(this, "currentangle", 0);
+    _defineProperty(this, "size", 0);
+    _defineProperty(this, "editmode", false);
+    _defineProperty(this, "colors", ['blue', 'green', 'white', 'yellow', 'orange', 'red']);
+    _defineProperty(this, "idno", 0);
+    _defineProperty(this, "pieces", []);
+    _defineProperty(this, "startXY", 0);
+    this.size = x;
+    this.pieces = document.getElementsByClassName('piece');
+  }
+
+  // Returns j-th adjacent face of i-th face
+  _createClass(Cube, [{
+    key: "getAxis",
+    value: function getAxis(face) {
+      return String.fromCharCode('X'.charCodeAt(0) + face / 2); // X, Y or Z
+    }
+
+    // Moves each of 26 pieces to their places, assigns IDs and attaches stickers
+  }, {
+    key: "assembleCube",
+    value: function assembleCube() {
+      var _this = this;
+      console.log(this.assembleCube);
+      for (var id, x, i = 0; id = 0, i < 26; i++) {
+        x = Cube.mx(i, i % 18);
+        this.pieces[i].style.transform = 'rotateX(0deg)' + this.moveto(i % 6, id, i) + (i > 5 ? this.moveto(x, id, i) + (i > 17 ? this.moveto(Cube.mx(x, x + 2), id, i) : '') : '');
+        this.pieces[i].setAttribute('id', 'piece' + id);
+      }
+      var stickers = document.querySelectorAll('div.sticker');
+      stickers.forEach(function (element) {
+        element.addEventListener('click', function () {
+          Cube.showinfo(element);
+        });
+        _this.faces.push(element);
+      });
+    }
+  }, {
+    key: "moveto",
+    value: function moveto(face, id, i) {
+      id = id + (1 << face);
+      var square = document.createElement('div');
+      square.setAttribute('class', 'sticker ' + this.colors[face]);
+      square.classList.add('unselectable');
+      square.classList.add(this.idno);
+      this.idno = this.idno + 1;
+      this.pieces[i].children[face].appendChild(square);
+      return 'translate' + this.getAxis(face) + '(' + (face % 2 * 4 - 2) + 'em)';
+    }
+  }, {
+    key: "getPieceBy",
+    value: function getPieceBy(face, index, corner) {
+      console.log("GETBYPIECE");
+      return document.getElementById('piece' + ((1 << face) + (1 << Cube.mx(face, index)) + (1 << Cube.mx(face, index + 1)) * corner));
+    }
+
+    // Swaps stickers of the face (by clockwise) stated times, thereby rotates the face
+  }, {
+    key: "swapPieces",
+    value: function swapPieces(face, times) {
+      console.log('SWAP PEICES');
+      for (var i = 0; i < 6 * times; i++) {
+        var piece1 = this.getPieceBy(face, i / 2, i % 2),
+          piece2 = this.getPieceBy(face, i / 2 + 1, i % 2);
+        for (var j = 0; j < 5; j++) {
+          var sticker1 = piece1.children[j < 4 ? Cube.mx(face, j) : face].firstChild,
+            sticker2 = piece2.children[j < 4 ? Cube.mx(face, j + 1) : face].firstChild,
+            className = sticker1 ? sticker1.className : '';
+          if (className) {
+            sticker1.className = sticker2.className;
+            sticker2.className = className;
+          }
+        }
+      }
+      editfaces();
+    }
+
+    // Animates rotation of the face (by clockwise if cw), and then swaps stickers
+  }, {
+    key: "mousedown",
+    value:
+    // Events
+    function mousedown(md_e) {
+      console.log("MOUSEDOWN");
+      this.startXY = pivot.style.transform.match(/-?\d+\.?\d*/g).map(Number), element = md_e.target.closest('.element'), face = [].indexOf.call((element || cube).parentNode.children, element);
+      (element || document.body).appendChild(guide);
+      scene.addEventListener('mousemove', Cube.mousemove(element));
+      document.addEventListener('mouseup', Cube.mouseup(guide));
+      scene.removeEventListener('mousedown', this.mousedown);
+    }
+  }, {
+    key: "editfaces",
+    value: function editfaces() {
+      console.log("EDITFACES");
+      faces.forEach(function (element) {
+        if (element.childNodes.length > 0) {
+          element.removeChild(element.firstChild);
+        }
+      });
+      faces.forEach(function (element) {
+        if (element.classList.contains('modified')) {
+          console.log("WE GONE ONE");
+          var info = document.createElement('p');
+          info.classList.toggle('boxinfo');
+          info.textContent = element.information;
+          console.log(info);
+          element.appendChild(info);
+        }
+      });
+    }
+  }], [{
+    key: "mx",
+    value: function mx(i, j) {
+      return ([2, 4, 3, 5][j % 4 | 0] + i % 2 * ((j | 0) % 4 * 2 + 3) + 2 * (i / 2 | 0)) % 6;
+    }
+  }, {
+    key: "animateRotation",
+    value: function animateRotation(face, cw, currentTime) {
+      console.log("ANIMATEROTATION");
+      var k = .3 * (face % 2 * 2 - 1) * (2 * cw - 1),
+        qubes = Array(9).fill(pieces[face]).map(function (value, index) {
+          return index ? this.getPieceBy(face, index / 2, index % 2) : value;
+        });
+      (function rotatePieces() {
+        var passed = Date.now() - currentTime,
+          style = 'rotate' + this.getAxis(face) + '(' + k * passed * (passed < 300) + 'deg)';
+        qubes.forEach(function (piece) {
+          piece.style.transform = piece.style.transform.replace(/rotate.\(\S+\)/, style);
+        });
+        if (passed >= 300) return this.swapPieces(face, 3 - 2 * cw);
+        requestAnimationFrame(rotatePieces);
+      })();
+    }
+  }, {
+    key: "mousemove",
+    value: function mousemove(element, mm_e) {
+      if (element) {
+        var gid = /\d/.exec(document.elementFromPoint(mm_e.pageX, mm_e.pageY).id);
+        if (gid && gid.input.includes('anchor')) {
+          mouseup();
+          var e = element.parentNode.children[Cube.mx(face, Number(gid) + 3)].hasChildNodes();
+          Cube.animateRotation(Cube.mx(face, Number(gid) + 1 + 2 * e), e, Date.now());
+        }
+      } else pivot.style.transform = 'rotateX(' + (startXY[0] - (mm_e.pageY - md_e.pageY) / 2) + 'deg)' + 'rotateY(' + (startXY[1] + (mm_e.pageX - md_e.pageX) / 2) + 'deg)';
+    }
+  }, {
+    key: "mouseup",
+    value: function mouseup(guide) {
+      console.log("MOUSEup");
+      document.body.appendChild(guide);
+      scene.removeEventListener('mousemove', Cube.mousemove);
+      document.removeEventListener('mouseup', Cube.mouseup);
+      scene.addEventListener('mousedown', this.mousedown);
+    }
+  }, {
+    key: "showinfo",
+    value: function showinfo(element) {
+      if (Cube.editmode == true) {
+        var text = document.createElement('p');
+        text.classList.toggle('boxinfo');
+        text.textContent = "Test";
+        element.appendChild(text);
+        element.classList.toggle('modified');
+        element.information = "Test";
+      }
+      // else Cube.displayinfo(element)
+      // Cube.displayinfo(element) 
+    }
+  }]);
+  return Cube;
+}();
+_defineProperty(Cube, "editmode", false);
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -641,136 +914,34 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _cube_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 
-var count = 54;
-var editmode = false;
-var colors = ['blue', 'green', 'white', 'yellow', 'orange', 'red'],
-  pieces = document.getElementsByClassName('piece');
-var text = document.querySelector('div.text');
-text.textContent = "EDIT MODE";
 
-// Returns j-th adjacent face of i-th face
-function mx(i, j) {
-  return ([2, 4, 3, 5][j % 4 | 0] + i % 2 * ((j | 0) % 4 * 2 + 3) + 2 * (i / 2 | 0)) % 6;
-}
-function getAxis(face) {
-  return String.fromCharCode('X'.charCodeAt(0) + face / 2); // X, Y or Z
-}
-function showinfo(element) {
-  if (editmode == true) {
-    var _text = document.createElement('p');
-    _text.classList.toggle('boxinfo');
-    _text.textContent = "Test";
-    element.appendChild(_text);
-    element.classList.toggle('modified');
-  }
-}
 
-// Moves each of 26 pieces to their places, assigns IDs and attaches stickers
-var idno = 0;
-function assembleCube() {
-  function moveto(face) {
-    id = id + (1 << face);
-    var square = document.createElement('div');
-    square.setAttribute('class', 'sticker ' + colors[face]);
-    square.classList.add('unselectable');
-    square.classList.add(idno);
-    idno = idno + 1;
-    console.log(idno);
-    pieces[i].children[face].appendChild(square);
-    return 'translate' + getAxis(face) + '(' + (face % 2 * 4 - 2) + 'em)';
-  }
-  for (var id, x, i = 0; id = 0, i < 26; i++) {
-    x = mx(i, i % 18);
-    pieces[i].style.transform = 'rotateX(0deg)' + moveto(i % 6) + (i > 5 ? moveto(x) + (i > 17 ? moveto(mx(x, x + 2)) : '') : '');
-    pieces[i].setAttribute('id', 'piece' + id);
-  }
-  var stickers = document.querySelectorAll('div.sticker');
-  stickers.forEach(function (element) {
-    element.addEventListener('click', function () {
-      showinfo(element);
-    });
-  });
-}
-function getPieceBy(face, index, corner) {
-  return document.getElementById('piece' + ((1 << face) + (1 << mx(face, index)) + (1 << mx(face, index + 1)) * corner));
-}
-
-// Swaps stickers of the face (by clockwise) stated times, thereby rotates the face
-function swapPieces(face, times) {
-  for (var i = 0; i < 6 * times; i++) {
-    var piece1 = getPieceBy(face, i / 2, i % 2),
-      piece2 = getPieceBy(face, i / 2 + 1, i % 2);
-    for (var j = 0; j < 5; j++) {
-      var sticker1 = piece1.children[j < 4 ? mx(face, j) : face].firstChild,
-        sticker2 = piece2.children[j < 4 ? mx(face, j + 1) : face].firstChild,
-        className = sticker1 ? sticker1.className : '';
-      if (className) sticker1.className = sticker2.className, sticker2.className = className;
-    }
-  }
-}
-
-// Animates rotation of the face (by clockwise if cw), and then swaps stickers
-function animateRotation(face, cw, currentTime) {
-  var k = .3 * (face % 2 * 2 - 1) * (2 * cw - 1),
-    qubes = Array(9).fill(pieces[face]).map(function (value, index) {
-      return index ? getPieceBy(face, index / 2, index % 2) : value;
-    });
-  (function rotatePieces() {
-    var passed = Date.now() - currentTime,
-      style = 'rotate' + getAxis(face) + '(' + k * passed * (passed < 300) + 'deg)';
-    qubes.forEach(function (piece) {
-      piece.style.transform = piece.style.transform.replace(/rotate.\(\S+\)/, style);
-    });
-    if (passed >= 300) return swapPieces(face, 3 - 2 * cw);
-    requestAnimationFrame(rotatePieces);
-  })();
-}
-
-// Events
-function mousedown(md_e) {
-  var startXY = pivot.style.transform.match(/-?\d+\.?\d*/g).map(Number),
-    element = md_e.target.closest('.element'),
-    face = [].indexOf.call((element || cube).parentNode.children, element);
-  function mousemove(mm_e) {
-    if (element) {
-      var gid = /\d/.exec(document.elementFromPoint(mm_e.pageX, mm_e.pageY).id);
-      if (gid && gid.input.includes('anchor')) {
-        mouseup();
-        var e = element.parentNode.children[mx(face, Number(gid) + 3)].hasChildNodes();
-        animateRotation(mx(face, Number(gid) + 1 + 2 * e), e, Date.now());
-      }
-    } else pivot.style.transform = 'rotateX(' + (startXY[0] - (mm_e.pageY - md_e.pageY) / 2) + 'deg)' + 'rotateY(' + (startXY[1] + (mm_e.pageX - md_e.pageX) / 2) + 'deg)';
-  }
-  function mouseup() {
-    document.body.appendChild(guide);
-    scene.removeEventListener('mousemove', mousemove);
-    document.removeEventListener('mouseup', mouseup);
-    scene.addEventListener('mousedown', mousedown);
-  }
-  (element || document.body).appendChild(guide);
-  scene.addEventListener('mousemove', mousemove);
-  document.addEventListener('mouseup', mouseup);
-  scene.removeEventListener('mousedown', mousedown);
-}
+var test = new _cube_js__WEBPACK_IMPORTED_MODULE_1__["default"](3);
+test.assembleCube();
 document.ondragstart = function () {
   return false;
 };
-window.addEventListener('load', assembleCube);
-scene.addEventListener('mousedown', mousedown);
-function toggle(text) {
-  editmode = !editmode;
-  console.log(editmode);
-  if (editmode == false) {
-    text.textContent = "VIEW MODE";
-  } else if (editmode == true) {
-    text.textContent = "EDIT MODE";
-  }
-  console.log(text.textContent);
-}
+scene.addEventListener('mousedown', test.mousedown);
+console.log("X");
+var text = document.querySelector('div.text');
+text.textContent = "EDIT MODE";
 text.addEventListener('click', function (text) {
   toggle(text);
 });
+function toggle(text) {
+  var display = document.querySelector('.infodisplay');
+  editmode = !editmode;
+  tets.editmode = !editmode;
+  if (editmode == false) {
+    text.textContent = "VIEW MODE";
+    display.classList.toggle('visible');
+  } else if (editmode == true) {
+    text.textContent = "EDIT MODE";
+    display.classList.toggle('visible');
+  }
+}
 })();
 
 /******/ })()
